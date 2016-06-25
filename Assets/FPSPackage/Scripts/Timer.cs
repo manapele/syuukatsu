@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 	public int timeLimit = 20;
@@ -42,6 +43,8 @@ public class Timer : MonoBehaviour {
 
 				timeRemaining = 0;
 				timerStarted = false;
+
+				SceneManager.LoadScene ("TimeUp");
 			}
 		}
 	
