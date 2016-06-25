@@ -20,7 +20,7 @@ public class GunScript : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			audioSource.Play ();
 			Shot ();
-			Instantiate (explosion, transform.position, Quaternion.identity);
+			//Instantiate (explosion, transform.position, Quaternion.identity);
 		}
 
 	}
@@ -35,6 +35,8 @@ public class GunScript : MonoBehaviour {
 			Instantiate (sparks, hit.point, Quaternion.identity);
 			if (hit.collider.tag == "Enemy") {
 				Debug.Log ("タグ認識");
+
+				Instantiate (explosion, hit.point, Quaternion.identity);
 				hit.collider.SendMessage ("Damage");
 			}
 		}

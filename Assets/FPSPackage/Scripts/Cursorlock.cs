@@ -17,7 +17,9 @@ public class Cursorlock : MonoBehaviour {
 	}
 
 	// ダメージを与えられた時、カメラを揺らす
+	/*
 	void Damage(){
-		transform.FindChild ("MainCamera").SendMessage ("Shake");
+		transform.parent.FindChild ("MainCamera").SendMessage ("Shake");
 	}
+	*/
 }

@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour {
 	void Start () {
 		text = GetComponent<Text> ();
 		ResetTimer ();
+		StartTimer ();
 	}
 
 	public void ResetTimer(){
@@ -44,6 +45,6 @@ public class Timer : MonoBehaviour {
 			}
 		}
 	
-		text.text = "Time:" + timeRemaining;
+		text.text = "Time:" + ((int)timeRemaining).ToString();
 	}
 }

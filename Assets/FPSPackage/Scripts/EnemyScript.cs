@@ -3,8 +3,32 @@ using System.Collections;
 
 public class EnemyScript : MonoBehaviour {
 
+	public string text;
+	public TextMesh textMesh;
+	public int wordId;
+
+	public PlayerScript player;
 	public int enemyHP = 3; // 敵の体力
 	public GameObject Bomb; // 爆発のオブジェクト
+
+	Vector3 playerPosition;
+	Vector3 vector;
+	float speed = 1;
+
+	void Start()
+	{
+		textMesh.text = text;
+	}
+
+
+	void Update()
+	{
+		
+		playerPosition = player.transform.position;
+		vector = playerPosition - transform.position;
+
+		transform.position = transform.position + vector.normalized * speed;
+	}
 
 	// Playerにダメージを与えられた時
 	void Damage(){
